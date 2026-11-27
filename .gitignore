@@ -1,0 +1,23 @@
+# Compiled binaries
+bridge.exe
+*.exe
+*.dll
+
+# Local dumps, test docs & screenshots
+project_code.txt
+desktop_shot.png
+paint_*.png
+*.docx
+*.xlsx
+
+# Secrets & OS/IDE junk
+.env
+.env.*
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+avatar.*
+linkedin_banner.*

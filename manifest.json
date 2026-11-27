@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "AI Studio Cockpit",
+  "version": "3.6",
+  "description": "Turn Google AI Studio into a Local & SSH DevOps Agent: Go Bridge, Live PTY, Streaming Exec, Agent Loop, Git & Secrets Guard",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "debugger",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://aistudio.google.com/*",
+    "http://127.0.0.1:8765/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://aistudio.google.com/*"
+      ],
+      "js": [
+        "i18n.js",
+        "pii_vault.js",
+        "utils.js",
+        "actions.js",
+        "vps.js",
+        "toc.js",
+        "code_runner.js",
+        "agent.js",
+        "ui_dock.js",
+        "main.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
